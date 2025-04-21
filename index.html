@@ -76,18 +76,6 @@
       animation: fadeIn 2s ease;
     }
 
-    .arrow {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    animation: bounce 1.5s infinite;
-    color: #ff4081;
-    display: none;
-    z-index: 15;
-}
-
 
     @keyframes bounce {
       0% { transform: translateY(0); }
@@ -139,8 +127,6 @@
     <div id="finalMessage">💌 Siempre quiero seguir sumando momentos contigo. Te amo, mi vida 💕</div>
   </div>
 
-  <!-- Flecha fija para invitar a deslizar -->
-<div id="arrow" class="arrow">⬇ Desliza para leer más</div>
 
   <!-- Música de fondo -->
   <audio id="music" src="Swimming.mp3" loop></audio>
@@ -224,7 +210,7 @@
           imgSlider.src = images[0];
           music.play();
           slideshow = setInterval(showNextImage, 5000);
-          arrow.style.display = 'block';
+         
 
         };
       } catch (err) {
