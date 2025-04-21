@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi chiquita - Feliz 24</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    #startButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    #startButton:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    #video {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 9999;
+    }
+
+    #content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    .image {
+      width: 90%;
+      max-width: 600px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: opacity 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #finalMessage {
+      display: none;
+      margin-top: 40px;
+      font-size: 1.5rem;
+      color: #d81b60;
+      animation: fadeIn 2s ease;
+    }
+
+    .arrow {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: bounce 1.5s infinite;
+    color: #ff4081;
+    display: none;
+    z-index: 15;
+}
+
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+    <!-- Canvas de corazones -->
+<canvas id="heartsCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+
+  <!-- Video -->
+  <video id="video" playsinline>
+    <source src="multimedia/tu-video.mp4" type="video/mp4">
+    
+  </video>
+
+  <!-- Botón para empezar -->
+  <button id="startButton">Feliz 24 💗!</button>
+
+  
+
+
+  <!-- Contenido de la carta -->
+  <div id="content">
+    <h1>Te amo</h1>
+    <img id="imgSlider" class="image" src="" alt="Foto" />
+    
+    <p style="margin-top: 30px; font-size: 1.2rem;">
+        Mi negrita preciosa,<br>
+
+        <br>Hoy celebramos dos meses juntos, y aunque es un tiempo que puede parecer corto, para mí han sido dos meses llenos de momentos maravillosos, de sonrisas, de risas compartidas y, sobre todo, de mucha felicidad. No sé cómo lograste que este tiempo se sintiera tan especial, pero lo has hecho, y por eso quiero aprovechar esta ocasión para decirte todo lo que siento.<br>
+        
+        <br>Desde que entraste en mi vida, todo cambió para bien. El solo hecho de pensar que estás a mi lado me llena de paz y alegría. Es impresionante cómo alguien puede llegar a hacerte sentir tan afortunado con solo su presencia, y tú, mi niña, haces eso todos los días. Cada momento a tu lado es un regalo, y no dejo de agradecer al universo por haberte cruzado en mi camino.<br>
+        
+        <br>Tu sonrisa es mi refugio, tu risa mi música favorita, y tus abrazos el lugar donde siempre quiero estar. Me haces sentir tan especial, tan querido, y me has mostrado lo que es realmente el amor. No solo eres mi novia, eres mi amiga, mi confidente, la persona que hace que todos los días valgan la pena. Cada vez que te miro, me doy cuenta de lo afortunado que soy, y me pregunto cómo pude vivir sin ti tanto tiempo. Me haces sentir completo, como nunca antes lo había hecho nadie.<br>
+        
+        <br>Estos dos meses no solo han sido una celebración del amor que compartimos, sino también de lo que somos como personas y como pareja. Hemos aprendido a conocernos más, a entendernos mejor, a apoyarnos mutuamente en todo momento. Y lo más hermoso de todo es que siento que todo esto es solo el comienzo. Imagino todo lo que vamos a vivir juntos, todas las aventuras, los sueños que vamos a cumplir, y las risas que aún nos esperan. Y quiero vivir todo eso a tu lado mi niña, porque no hay nadie con quien prefiera hacerlo que contigo.<br>
+        
+        <br>Quiero agradecerte por ser tú, por tu amor, por tu paciencia, por tus abrazos cálidos y por tu forma de hacerme sentir el hombre más afortunado del mundo. Gracias por cada beso, por cada gesto de cariño, por estar ahí cuando más te necesito. Eres mi todo, y no me canso de repetirlo.<br>
+        
+        <br>Hoy celebro estos dos meses, pero sobre todo celebro a la persona increíble que eres. Y, aunque hoy sea nuestra fecha, quiero que sepas que todos los días son un recordatorio para mí de lo bendecido que soy de tenerte en mi vida. Eres mi sol, mi luna, mi chiquita hermosa, y me haces sentir más feliz de lo que jamás imaginé.<br>
+        
+        <br>Te amo con todo mi corazón mi vida, y no puedo esperar a vivir muchos más meses, años y toda una vida a tu lado.
+        
+        Feliz 24 mi amor, te amo más de lo que las palabras pueden expresar.<br><br> Con todo mi amor, Luiggi 🐰<br><br><br><br><br>
+    </p>
+    <div id="finalMessage">💌 Siempre quiero seguir sumando momentos contigo. Te amo, mi vida 💕</div>
+  </div>
+
+  <!-- Flecha fija para invitar a deslizar -->
+<div id="arrow" class="arrow">⬇ Desliza para leer más</div>
+
+  <!-- Música de fondo -->
+  <audio id="music" src="Swimming.mp3" loop></audio>
+
+  <script>
+    const images = [
+      "multimedia/foto (44).jpg",
+      "multimedia/foto 1.jpg",
+      "multimedia/foto (2).jpg",
+      "multimedia/foto (3).jpg",
+      "multimedia/foto (4).jpg",
+      "multimedia/foto (12).jpg",
+      "multimedia/foto (13).jpg",
+      "multimedia/foto (22).jpg",
+      "multimedia/foto (46).jpg",
+      "multimedia/foto (47).jpg",
+      "multimedia/foto (48).jpg",
+      "multimedia/foto (57).jpg",
+      "multimedia/foto (100).jpg",
+      "multimedia/foto (83).jpg",
+      "multimedia/foto (60).jpg",
+      "multimedia/foto (115).jpg",
+      "multimedia/foto (124).jpg",
+      "multimedia/foto (135).jpg",
+      "multimedia/foto (138).jpg",
+      "multimedia/foto (145).jpg",
+      "multimedia/foto (153).jpg", 
+      "multimedia/foto (168).jpg", 
+      "multimedia/foto (176).jpg", 
+      "multimedia/foto (154).jpg", 
+      "multimedia/foto (177).jpg", 
+      "multimedia/foto (180).jpg",
+      "multimedia/imagen 1.jpg"
+    ];
+    let currentIndex = 0;
+    const imgSlider = document.getElementById('imgSlider');
+    const finalMessage = document.getElementById('finalMessage');
+    const arrow = document.getElementById('arrow');
+    const video = document.getElementById('video');
+    const music = document.getElementById('music');
+    const content = document.getElementById('content');
+    let slideshow;
+
+    function showNextImage() {
+      imgSlider.classList.add('fade');
+      setTimeout(() => {
+        currentIndex++;
+        if (currentIndex < images.length) {
+          const newImg = new Image();
+          newImg.src = images[currentIndex];
+          newImg.onload = () => {
+            imgSlider.src = newImg.src;
+            imgSlider.classList.remove('fade');
+          };
+        } else {
+          clearInterval(slideshow);
+          finalMessage.style.display = 'block';
+          arrow.style.display = 'block';
+        }
+      }, 1000);
+    }
+
+    document.getElementById('startButton').addEventListener('click', async () => {
+      document.getElementById('startButton').style.display = 'none';
+      video.style.display = 'block';
+
+      try {
+        // Solicita pantalla completa
+        if (video.requestFullscreen) await video.requestFullscreen();
+        else if (video.webkitRequestFullscreen) await video.webkitRequestFullscreen();
+        else if (video.msRequestFullscreen) await video.msRequestFullscreen();
+
+        await video.play();
+
+        video.onended = () => {
+          video.style.display = 'none';
+          if (document.fullscreenElement) document.exitFullscreen();
+          content.style.display = 'block';
+          content.style.animation = 'fadeIn 1.5s ease';
+          document.body.style.overflowY = 'auto';
+          imgSlider.src = images[0];
+          music.play();
+          slideshow = setInterval(showNextImage, 5000);
+          arrow.style.display = 'block';
+
+        };
+      } catch (err) {
+        alert("Error al reproducir el video. Intenta tocar la pantalla nuevamente.");
+        console.error(err);
+      }
+    });
+// Canvas animado de corazones
+const canvas = document.getElementById('heartsCanvas');
+const ctx = canvas.getContext('2d');
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+});
+
+const hearts = [];
+
+function randomColor() {
+  const colors = [
+    'rgba(255, 105, 180, 0.7)',  // Hot Pink
+    'rgba(255, 182, 193, 0.7)',  // Light Pink
+    'rgba(255, 160, 122, 0.7)',  // Light Salmon
+    'rgba(255, 192, 203, 0.7)',  // Pink
+    'rgba(255, 128, 171, 0.7)'   // Rose
+  ];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function createParticle() {
+  hearts.push({
+    x: Math.random() * width,
+    y: height + 20,
+    size: Math.random() * 15 + 10,
+    speed: Math.random() * 1 + 0.5,
+    drift: (Math.random() - 0.5) * 2,
+    color: randomColor()
+  });
+}
+
+
+function drawHeart(x, y, size, color) {
+  const gradient = ctx.createRadialGradient(x, y, 0, x, y, size);
+  gradient.addColorStop(0, 'white');
+  gradient.addColorStop(0.4, color);
+  gradient.addColorStop(1, 'transparent');
+
+  ctx.beginPath();
+  const topCurveHeight = size * 0.3;
+  ctx.moveTo(x, y + topCurveHeight);
+  ctx.bezierCurveTo(x, y, x - size / 2, y, x - size / 2, y + topCurveHeight);
+  ctx.bezierCurveTo(x - size / 2, y + (size + topCurveHeight) / 2,
+                    x, y + (size + topCurveHeight) / 2,
+                    x, y + size);
+  ctx.bezierCurveTo(x, y + (size + topCurveHeight) / 2,
+                    x + size / 2, y + (size + topCurveHeight) / 2,
+                    x + size / 2, y + topCurveHeight);
+  ctx.bezierCurveTo(x + size / 2, y, x, y, x, y + topCurveHeight);
+  ctx.closePath();
+
+  ctx.fillStyle = gradient;
+  ctx.fill();
+}
+
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  for (let i = 0; i < hearts.length; i++) {
+    let h = hearts[i];
+    drawHeart(h.x, h.y, h.size, h.color);
+
+    h.y -= h.speed;
+    h.x += h.drift;
+    if (h.y < -50 || h.x < -50 || h.x > width + 50) {
+      hearts.splice(i, 1);
+      i--;
+    }
+  }
+  if (Math.random() < 0.1) createParticle();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+  </script>
+</body>
+</html>
